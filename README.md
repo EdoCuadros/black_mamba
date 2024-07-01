@@ -45,7 +45,7 @@ NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create
 
 2. Regular install the operating system in the Jetson.
 
-I tried to use latest Nano Jetpack and  docker containers (recommended by Nvidia), but i just found it impossible to run. 
+I tried to use the latest Nano Jetpack and docker containers (recommended by Nvidia), but I found it impossible to run.
 
 
 ### ROS Package
