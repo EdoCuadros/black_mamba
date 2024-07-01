@@ -1,11 +1,14 @@
 # black_mamba
-[![foxy][foxy-badge]][foxy]
-[![ubuntu20][ubuntu20-badge]][ubuntu20]
+
+
 This repository contains the code and resources for designing and developing a mobile robotic platform using 
 NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create 2, the Nvidia Jetson Nano board, and the Intel RealSense D435 depth camera. The ROS packages in this repository include components for h andling the Create, descriptions and drivers, as  well as integrating the Jetson and ROS. Additionally, it inclued connections to Gazebo, descriptions, worlds, and controllers, and solutions for teleoperated robot control using PS4 controllers. 
 
-[![foxy][foxy-badge]][foxy]
-[![ubuntu20][ubuntu20-badge]][ubuntu20]
+![Ubuntu 20.04](https://img.shields.io/badge/Ubuntu-20.04-orange?logo=ubuntu&logoColor=white)
+![Foxy](https://img.shields.io/badge/ROS-Foxy-blue?logo=ros&logoColor=white)
+
+<hr>
+
 ## Contents
 
 - [Requirements](#requirements)
@@ -16,7 +19,7 @@ NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create
 - [Components](#usage)
     - [Create](#create-robot)
     - [Description](#description)
-
+<hr>
 
 ## Requirements
 
@@ -29,7 +32,9 @@ NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create
     - ROS 2 ([Foxy](https://docs.ros.org/en/foxy/Installation.html)), Gazebo, Rviz, etc...
     - [create_robot packages](https://github.com/AutonomyLab/create_robot.git)
     - [ROS Wrapper and SDK for D435](https://github.com/IntelRealSense/realsense-ros.git)
-    
+
+<hr>
+
 ## Instalation
 
 ### Custom Xubuntu Image
@@ -59,10 +64,12 @@ source install/setup.bash
 
 ## Usage
 
-Look for [.launch files](launch/README.md).
+Look for [.launch](launch/README.md) files.
 
 ## Components 
 
 ### Create Robot
 
 ### Description
+
+Look for [.description](description/README.md)
