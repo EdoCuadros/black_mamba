@@ -1,4 +1,4 @@
-# black_mamba
+# Black Mamba
 
 
 This repository contains the code and resources for designing and developing a mobile robotic platform using 
