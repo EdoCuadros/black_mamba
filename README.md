@@ -30,8 +30,10 @@ NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create
 
 - Software:
     - ROS 2 ([Foxy](https://docs.ros.org/en/foxy/Installation.html)), Gazebo, Rviz, etc...
-    - [create_robot packages](https://github.com/AutonomyLab/create_robot.git)
+    - [create_robot packages](https://github.com/AutonomyLab/create_robot.git)*
     - [ROS Wrapper and SDK for D435](https://github.com/IntelRealSense/realsense-ros.git)
+
+* While building the Create package, there were issues with non-existent files needed as libraries. These files were modified to fit the current ROS version. All modified and necessary files for Create with this ROS version are located in Create folder.
 
 <hr>
 
