@@ -33,7 +33,27 @@ NVIDIA Jetson Nano and iRobot Create 2. The plataform utilizes the iRobot Create
     - [create_robot packages](https://github.com/AutonomyLab/create_robot.git)*
     - [ROS Wrapper and SDK for D435](https://github.com/IntelRealSense/realsense-ros.git)
 
-* While building the Create package, there were issues with non-existent files needed as libraries. These files were modified to fit the current ROS version. All modified and necessary files for Create with this ROS version are located in Create folder.
+* While building the Create package, there were issues with non-existent files needed as libraries. These files were modified to fit the current ROS version. 
+
+Before building the Create package, you need to modify the *create_driver.cpp* file located at the following path:
+
+```
+cd /home/bm/bm_ws/src/create_robot/create_driver/src/
+```
+
+The line that needs to be modified is *#include "tf2_geometry_msgs/tf2_geometry_msgs.cpp". In ROS Foxy version, this file does not have .cpp extension but rather .h (this can be verified at the following path: */opt/ros/foxy/include/tf2_geometry_msgs/). Therefore, the line should be changed to:
+
+```
+#include "tf2_geometry_msgs/tf2_geometry_msgs.h"
+```
+
+After making this change, there should be no problem building the package with *colcon build*.
+
+It is recommended to use the following line to allow future changes without the need for rebuilding:
+
+```
+colcon build --symlink-install
+```
 
 <hr>
 
@@ -66,12 +86,54 @@ source install/setup.bash
 
 ## Usage
 
+### Simulation
+
+To configure, modify or try simulations; it is recommended to use an Ubuntu laptop instead of the Jetson itself for performance porpuses. 
+
 Look for [.launch](launch/README.md) files.
+
+### Robot
+
+It is also strongly recommended to use Barrel Jack connector for additional power. Micro USB port does not provide sufficient power for the Jetson.
+
+To control the robot, connect via ssh to the Jetson from an Ubuntu pc (maybe check if there's a change in the Jetson ip address).
+
+- User: bm
+- Password: 1.
+- Ip address: 192.168.20.30
+```
+ssh bm@192.168.20.30
+```
+
+Once the connection is created, you should see a message like this:
+
+![alt text](imgs/image.png)
+
+The .bashrc file should include commands to source both the ROS packages and the Create packages. However, in the case of a clean install, you should source them first.
+
+```
+source /opt/ros/foxy/setup.bash
+source /home/bm/bm_ws/install/setup.bash
+```
+
+Then you can launch the create bringup.
+
+```
+ros2 launch create_bringup create_2.launch
+```
+
+In another terminal, launch the joystick file. (Don't launch in Jetson, but in the pc instead)
+
+```
+ros2 launch black_mamba joystick.launch.py
+```
+
+Now you can start controlling the roomba with the PS4 controller.
 
 ## Components 
 
-### Create Robot
 
-### Description
+-  [Description files](description/README.md)
+-  [Configuration files](config/README.md)
 
-Look for [.description](description/README.md)
+

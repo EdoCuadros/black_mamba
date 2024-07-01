@@ -20,8 +20,9 @@ teleop_node:
     scale_angular_turbo:
       yaw: 1.0
     
-
-    enable_button: 9
+    # L1 in PS4 controller.
+    enable_button: 9  
+    # R1 in PS4 controller
     enable_turbo_button: 10
 
     require_enable_button: true 
